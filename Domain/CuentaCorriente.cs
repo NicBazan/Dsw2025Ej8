@@ -31,5 +31,10 @@ namespace Dsw2025Ej8.Domain
 
                 Saldo -= monto;
             }
+
+        public override void Depositar(decimal monto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

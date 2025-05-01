@@ -30,12 +30,12 @@ public abstract class CuentaBancaria
     {
         if (monto <= 0)
         {
-            throw new MontoNoValidoException();
+            throw new MontoNoValido($"Cuenta {Numero}: El monto ingresado no es válido para la operación solicitada");
         }
 
         if (Estado != Estado.Activa)
         {
-            throw new CuentaNoActivaException();
+            throw new CuentaNoActiva($"Cuenta {Numero}: No se puede operar con la cuenta {Estado}");
         }
     }
 
@@ -55,8 +55,5 @@ public abstract class CuentaBancaria
     }
         
 
-        public override void AplicarInteres()
-        {
-            // No aplica interés en cuenta corriente por defecto
-        }
+        
 }
