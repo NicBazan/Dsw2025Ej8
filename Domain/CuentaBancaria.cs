@@ -1,13 +1,15 @@
-﻿namespace Dsw2025Ej8.Domain;
+﻿using static Dsw2025Ej8.Domain.Excepciones;
+
+namespace Dsw2025Ej8.Domain;
 
 public abstract class CuentaBancaria
 {
 
 
     public string Numero { get; }
-    public decimal Saldo { get; private set; }
-    public TipoCuenta Tipo { get; private set; }
-    public Estado Estado { get; private set; }
+    public decimal Saldo { get;  set; }
+    public TipoCuenta Tipo { get;  set; }
+    public Estado Estado { get;  set; }
     public decimal TasaDeInteres { get; set; }
     public decimal LimiteDeDescubierto { get; set; }
     public decimal Comision { get; set; }
@@ -49,6 +51,12 @@ public abstract class CuentaBancaria
 
     public void AplicarInteres()
     {
-        // este metodo se lo aplica en el otro tipo dde cuenta
+       
     }
+        
+
+        public override void AplicarInteres()
+        {
+            // No aplica interés en cuenta corriente por defecto
+        }
 }
