@@ -7,21 +7,18 @@ namespace Dsw2025Ej8
     {
         static void Main(string[] args)
         {
-
-            decimal saldoInt;
             CuentaBancaria[] cuentas = new CuentaBancaria[4];
 
             try
             {
-                var cuenta = new CuentaDeAhorro("1", 5000, new string[] { "Ramon", "Rodrigo" })
+                
+                var cuenta = new CuentaDeAhorro("1", 1000, new string[] { "Avila", "Nicolas" })
                 {
-                    TasaDeInteres = 0.04m,
+                    TasaDeInteres = 0.03m,
                 };
-                cuenta.Depositar(1500.00m);
-                cuenta.Retirar(6000m);
-
+                cuenta.Depositar(500m);       
+                cuenta.Retirar(1200m);        
                 cuentas[0] = cuenta;
-
             }
             catch (Exception e)
             {
@@ -30,15 +27,14 @@ namespace Dsw2025Ej8
 
             try
             {
-                var cuenta = new CuentaDeAhorro("2", 7500, new string[] { "Raul", "Bazan" })
+                
+                var cuenta = new CuentaDeAhorro("2", 2000, new string[] { "Gabriel", "Moeykens" })
                 {
-                    TasaDeInteres = 0.04m,
+                    TasaDeInteres = 0.02m,
                 };
-                cuenta.Depositar(-980m);
-                cuenta.Retirar(4000m);
-
+                cuenta.Depositar(-100m);     
+                cuenta.Retirar(500m);      
                 cuentas[1] = cuenta;
-
             }
             catch (Exception e)
             {
@@ -47,15 +43,15 @@ namespace Dsw2025Ej8
 
             try
             {
-                var cuenta = new CuentaCorriente("3", 10000, new string[] { "Francis", "Ruiz" })
+                
+                var cuenta = new CuentaCorriente("3", 1500, new string[] { "Bazan", "Raul" })
                 {
-                    Comision = 0.4m,
-                    LimiteDeDescubierto = 2000m,
+                    Comision = 0.2m,
+                    LimiteDeDescubierto = 1000m,
                 };
-                cuenta.Depositar(-500m);
-                cuenta.Retirar(-1200m);
+                cuenta.Depositar(1000m);       
+                cuenta.Retirar(2300m);         
                 cuentas[2] = cuenta;
-
             }
             catch (Exception e)
             {
@@ -64,41 +60,35 @@ namespace Dsw2025Ej8
 
             try
             {
-                var cuenta = new CuentaCorriente("4", 3000, new string[] { "Lionel", "Araoz" })
+                
+                var cuenta = new CuentaCorriente("4", 500, new string[] { "Andrada", "Fabrizio" })
                 {
-                    Comision = 0.5m,
-                    LimiteDeDescubierto = 2000m,
+                    Comision = 0.3m,
+                    LimiteDeDescubierto = 300m,
                 };
-                cuenta.Depositar(10000m);
-                cuenta.Retirar(4500m);
+                cuenta.Depositar(200m);       
+                cuenta.Retirar(1200m);        
                 cuentas[3] = cuenta;
-
             }
             catch (Exception e)
             {
                 ControllerExc.Handle(e);
             }
 
-            Console.WriteLine("\n");
-            Console.WriteLine("\t --- RESUMEN CUENTAS SIN EXCEPCIONES ---");
-            Console.WriteLine("\n");
-            foreach (var cuenta in cuentas)
+           
+            Console.WriteLine("Resumen de cuentas:\n");
+            foreach (var c in cuentas)
             {
-                if (cuenta != null)
+                if (c != null)
                 {
-                    Console.WriteLine("\n");
-
-                    var MostrarDatos = new { cuenta.Numero, Tipo = cuenta.GetType().Name, cuenta.Saldo };
-
-                    Console.WriteLine(MostrarDatos);
-
-                    if (cuenta is CuentaDeAhorro cuentaDeAhorro)
+                    var resumen = new
                     {
-                        //corregir aqui la referencia del objeto
-                        saldoInt = CuentaDeAhorro.AplicarInteres();
-                        Console.WriteLine($"El saldo de cuenta {CuentaDeAhorro.Numero} aplicando el interes es: {saldoInt}");
+                        Numero = c.Numero,
+                        Tipo = c.GetType().Name,
+                        Saldo = c.Saldo
+                    };
 
-                    }
+                    Console.WriteLine($"Número: {resumen.Numero}, Tipo: {resumen.Tipo}, Saldo: {resumen.Saldo:C}");
                 }
             }
         }

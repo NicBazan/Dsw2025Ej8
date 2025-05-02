@@ -7,11 +7,11 @@ using static Dsw2025Ej8.Domain.Excepciones;
 
 namespace Dsw2025Ej8.Domain
 {
-    class CajaDeAhorro : CuentaBancaria
+    class CuentaDeAhorro : CuentaBancaria
     {
         public decimal TasaDeInteres { get; init; }
 
-        public CajaDeAhorro(string numero, decimal saldo, string[] titulares) : base(numero, saldo, titulares)
+        public CuentaDeAhorro(string numero, decimal saldo, string[] titulares) : base(numero, saldo, titulares)
         {
 
         }
@@ -34,9 +34,9 @@ namespace Dsw2025Ej8.Domain
             Saldo -= monto;
         }
 
-        public decimal AplicarInteres(decimal monto)
+        public decimal AplicarInteres()
         {
-            ValidarOperacion(monto);
+          
             Saldo += Saldo * TasaDeInteres;
             return Saldo;
         }

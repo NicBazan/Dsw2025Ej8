@@ -8,7 +8,7 @@ namespace Dsw2025Ej8.Domain
 {
     public class Excepciones
     {
-        public static class ControladorExcepciones
+        public static class ControllerExc
         {
             public static void Handle(Exception ex)
             {

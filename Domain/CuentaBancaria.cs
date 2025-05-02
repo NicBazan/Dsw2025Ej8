@@ -49,10 +49,7 @@ public abstract class CuentaBancaria
     public abstract void Retirar(decimal monto);
     
 
-    public void AplicarInteres()
-    {
-       
-    }
+    
         
 
         
