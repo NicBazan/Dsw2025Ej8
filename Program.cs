@@ -75,8 +75,10 @@ namespace Dsw2025Ej8
                 ControllerExc.Handle(e);
             }
 
-           
-            Console.WriteLine("Resumen de cuentas:\n");
+            Console.WriteLine("\n\t ---------------------");
+            Console.WriteLine("\t  Resumen de cuentas:  ");
+            Console.WriteLine("\t ---------------------");
+            Console.WriteLine("\n");
             foreach (var c in cuentas)
             {
                 if (c != null)
@@ -88,7 +90,7 @@ namespace Dsw2025Ej8
                         Saldo = c.Saldo
                     };
 
-                    Console.WriteLine($"Número: {resumen.Numero}, Tipo: {resumen.Tipo}, Saldo: {resumen.Saldo:C}");
+                    Console.WriteLine($"Nro: {resumen.Numero}, Tipo: {resumen.Tipo}, Saldo: {resumen.Saldo:C}");
                 }
             }
         }

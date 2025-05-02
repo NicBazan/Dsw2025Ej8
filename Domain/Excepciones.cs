@@ -24,7 +24,7 @@ namespace Dsw2025Ej8.Domain
                         Console.WriteLine(saldo.Message);
                         break;
                     default:
-                        Console.WriteLine($"[ERROR DESCONOCIDO] {ex.Message}");
+                        Console.WriteLine($" [ ERROR DESCONOCIDO ] {ex.Message}");
                         break;
                 }
             }
