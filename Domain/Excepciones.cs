@@ -14,14 +14,14 @@ namespace Dsw2025Ej8.Domain
             {
                 switch (ex)
                 {
-                    case MontoNoValido mo:
-                        Console.WriteLine(mo.Message);
+                    case MontoNoValido monto:
+                        Console.WriteLine(monto.Message);
                         break;
-                    case CuentaNoActiva cu:
-                        Console.WriteLine(cu.Message);
+                    case CuentaNoActiva cuenta:
+                        Console.WriteLine(cuenta.Message);
                         break;
-                    case SaldoInsuficiente sa:
-                        Console.WriteLine(sa.Message);
+                    case SaldoInsuficiente saldo:
+                        Console.WriteLine(saldo.Message);
                         break;
                     default:
                         Console.WriteLine($"[ERROR DESCONOCIDO] {ex.Message}");

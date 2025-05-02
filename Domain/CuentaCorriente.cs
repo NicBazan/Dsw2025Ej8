@@ -26,7 +26,7 @@ namespace Dsw2025Ej8.Domain
                 if (Saldo - monto < -LimiteDeDescubierto)
                 {
                     SetEstado(Estado.Suspendida);
-                    throw new SaldoInsuficienteException();
+                    throw new SaldoInsuficiente("La cuenta no cuenta con saldo para la operación solicitada. Fue suspendida.");
                 }
 
                 Saldo -= monto;

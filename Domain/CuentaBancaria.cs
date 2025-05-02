@@ -7,12 +7,12 @@ public abstract class CuentaBancaria
 
 
     public string Numero { get; }
-    public decimal Saldo { get;  set; }
-    public TipoCuenta Tipo { get;  set; }
-    public Estado Estado { get;  set; }
-    public decimal TasaDeInteres { get; set; }
-    public decimal LimiteDeDescubierto { get; set; }
-    public decimal Comision { get; set; }
+    public decimal Saldo { get; protected set; }
+    public TipoCuenta Tipo { get;  protected set; }
+    public Estado Estado { get; protected set; }
+    public decimal TasaDeInteres { get; protected set; }
+    public decimal LimiteDeDescubierto { get; protected set; }
+    public decimal Comision { get; protected set; }
 
     public string[] Titulares { get; }
 
@@ -26,7 +26,7 @@ public abstract class CuentaBancaria
         Titulares = titulares ?? Array.Empty<string>();
     }
 
-    protected void ValidarOperacion(decimal monto)
+     public void ValidarOperacion(decimal monto)
     {
         if (monto <= 0)
         {
